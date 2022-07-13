@@ -1,1 +1,3 @@
-final: prev: {} // prev
+final: prev: prev // {
+  name = "flake-test";
+}
