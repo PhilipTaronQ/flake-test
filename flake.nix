@@ -2,7 +2,7 @@
   inputs = {
   };
 
-  outputs = inputs @ { ...}: {
+  outputs = { self }: {
 
   };
 }
