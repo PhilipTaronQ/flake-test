@@ -2,7 +2,7 @@ rec {
   description = "Flake Test";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/22.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
