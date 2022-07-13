@@ -1,13 +1,13 @@
-rec {
-  # Description of the flake.
-  description = "Flake Test";
+{
+  description = "Flake utils demo";
 
-  inputs.nixpkgs = {
-    url = "github:nixos/nixpkgs/22.05";
-  };
+  inputs.flake-utils.url = "github:numtide/flake-utils";
 
-  outputs = inp: {
-    # Nifty: you can use `nix eval .#self` to see what self is.
-    inherit (inp) self;
-  };
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.simpleFlake {
+      inherit self nixpkgs;
+      name = "simple-flake";
+      overlay = ./overlay.nix;
+      shell = ./shell.nix;
+    };
 }
